@@ -1,6 +1,7 @@
 import ActionResponse from './ActionResponse';
 import Navigation from './Navigation';
 import Notification from './Notification';
+import OpenLink from './OpenLink';
 
 export default class ActionResponseBuilder {
   public _actionResponse: any;
@@ -16,6 +17,11 @@ export default class ActionResponseBuilder {
 
   setNotification(notification: Notification) {
     this._actionResponse.setNotification(notification);
+    return this;
+  }
+
+  setOpenLink(openLink: OpenLink) {
+    this._actionResponse.setOpenLink(openLink);
     return this;
   }
 
