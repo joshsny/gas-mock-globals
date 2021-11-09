@@ -4,7 +4,7 @@ import Notification from './Notification';
 import OpenLink from './OpenLink';
 
 export default class ActionResponseBuilder {
-  public _actionResponse: any;
+  public _actionResponse: ActionResponse;
 
   constructor() {
     this._actionResponse = new ActionResponse();

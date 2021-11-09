@@ -1,10 +1,19 @@
-import BaseClass from '../../helpers/BaseClass';
+import Card from './Card';
 import OpenLink from './OpenLink';
 
-export default class UniversalActionResponseBuilder extends BaseClass {
-  public getData: any;
+export default class UniversalActionResponseBuilder {
+  public _data: {
+    cards?: Card[];
+    openLink?: OpenLink;
+  };
 
-  public _data: any;
+  constructor() {
+    this._data = {};
+  }
+
+  getData() {
+    return this._data;
+  }
 
   build() {
     return this.getData();

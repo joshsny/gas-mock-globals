@@ -1,10 +1,19 @@
 import set from 'lodash.set';
-import BaseClass from '../../helpers/BaseClass';
 import Action from './Action';
 import OpenLink from './OpenLink';
 
-export default class CardAction extends BaseClass {
-  public _data: any;
+export default class CardAction {
+  public _data: {
+    actionLabel?: string;
+    onClick?: {
+      action?: ReturnType<Action['getData']>;
+      openLink?: ReturnType<OpenLink['getData']>;
+    };
+  } = {};
+
+  getData() {
+    return this._data;
+  }
 
   setOpenLink(openLink: OpenLink) {
     if (openLink instanceof OpenLink === false) {

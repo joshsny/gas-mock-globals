@@ -1,17 +1,21 @@
-import BaseClass from '../../helpers/BaseClass';
 import CardAction from './CardAction';
 import CardHeader from './CardHeader';
 import CardSection from './CardSection';
 
-export default class Card extends BaseClass {
-  public _data: any;
-
-  public getData: any;
+export default class Card {
+  public _data: {
+    name?: string;
+    header?: ReturnType<CardHeader['getData']>;
+    sections: ReturnType<CardSection['getData']>[];
+    cardActions: ReturnType<CardAction['getData']>[];
+  };
 
   constructor() {
-    super();
-    this._data.sections = [];
-    this._data.cardActions = [];
+    this._data = { sections: [], cardActions: [] };
+  }
+
+  getData() {
+    return this._data;
   }
 
   setName(name: string) {
