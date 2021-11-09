@@ -6,6 +6,7 @@ import Widget from './Widget';
 
 export default class Button extends Widget {
   public _data: {
+    altText?: string;
     onClick?: {
       openLink?: ReturnType<typeof OpenLink.prototype.getData>;
       action?:
@@ -21,6 +22,12 @@ export default class Button extends Widget {
 
   getData() {
     return this._data;
+  }
+
+  setAltText(altText: string) {
+    this._data.altText = altText;
+
+    return this;
   }
 
   setAuthorizationAction(action: AuthorizationAction) {

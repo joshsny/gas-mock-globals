@@ -1,4 +1,3 @@
-// classes
 import Action from './classes/Action';
 import ActionResponseBuilder from './classes/ActionResponseBuilder';
 import AuthorizationAction from './classes/AuthorizationAction';
@@ -7,6 +6,9 @@ import CardAction from './classes/CardAction';
 import CardBuilder from './classes/CardBuilder';
 import CardHeader from './classes/CardHeader';
 import CardSection from './classes/CardSection';
+import DecoratedText from './classes/DecoratedText';
+import FixedFooter from './classes/FixedFooter';
+import IconImage from './classes/IconImage';
 import Image from './classes/Image';
 import ImageButton from './classes/ImageButton';
 import KeyValue from './classes/KeyValue';
@@ -15,14 +17,14 @@ import Notification from './classes/Notification';
 import OpenLink from './classes/OpenLink';
 import SelectionInput from './classes/SelectionInput';
 import Suggestions from './classes/Suggestions';
+import Switch from './classes/Switch';
 import TextButton from './classes/TextButton';
 import TextInput from './classes/TextInput';
 import TextParagraph from './classes/TextParagraph';
 import UniversalActionResponseBuilder from './classes/UniversalActionResponseBuilder';
-// enums
-// enums
 import ComposeEmailType from './enums/ComposedEmailType';
 import Icon from './enums/Icon';
+import ImageCropType from './enums/ImageCropType';
 import ImageStyle from './enums/ImageStyle';
 import LoadIndicator from './enums/LoadIndicator';
 import NotificationType from './enums/NotificationType';
@@ -64,6 +66,18 @@ export default class CardService {
     return new CardSection();
   }
 
+  static newDecoratedText() {
+    return new DecoratedText();
+  }
+
+  static newFixedFooter() {
+    return new FixedFooter();
+  }
+
+  static newIconImage() {
+    return new IconImage();
+  }
+
   static newImage() {
     return new Image();
   }
@@ -96,6 +110,10 @@ export default class CardService {
     return new Suggestions();
   }
 
+  static newSwitch() {
+    return new Switch();
+  }
+
   static newTextButton() {
     return new TextButton();
   }
@@ -122,6 +140,10 @@ export default class CardService {
 
   static get ImageStyle() {
     return ImageStyle;
+  }
+
+  static get ImageCropType() {
+    return ImageCropType;
   }
 
   static get LoadIndicator() {

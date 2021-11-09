@@ -4,7 +4,11 @@ import AuthorizationAction from './AuthorizationAction';
 import Button from './Button';
 
 export default class TextButton extends Button {
-  public _data!: { text?: string; style?: TextButtonStyle } & Button['_data'];
+  public _data!: {
+    text?: string;
+    style?: TextButtonStyle;
+    backgroundColor?: string;
+  } & Button['_data'];
 
   constructor() {
     super();
@@ -21,6 +25,11 @@ export default class TextButton extends Button {
 
     set(this._data, 'onClick.openLink', action.getData());
 
+    return this;
+  }
+
+  setBackgroundColor(color: string) {
+    this._data.backgroundColor = color;
     return this;
   }
 
