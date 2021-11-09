@@ -17,7 +17,7 @@ export default class ButtonSet extends Widget {
   }
 
   addButton(button: TextButton | ImageButton) {
-    if ((button instanceof TextButton) | (ImageButton === false)) {
+    if (button instanceof TextButton || button instanceof ImageButton === false) {
       throw new Error('Invalid value passed for "addButton"');
     }
 
