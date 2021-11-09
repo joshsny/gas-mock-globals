@@ -9,6 +9,10 @@ export default class ImageButton extends Button {
     super();
   }
 
+  getData() {
+    return this._data;
+  }
+
   setIconUrl(url: string) {
     this._data.url = url;
 
