@@ -7,6 +7,7 @@ export default class ActionResponse {
     navigation?: ReturnType<Navigation['getData']>;
     notification?: ReturnType<Notification['getData']>;
     openLink?: ReturnType<OpenLink['getData']>;
+    stateChanged?: boolean;
   };
 
   constructor() {
@@ -36,6 +37,11 @@ export default class ActionResponse {
       throw new Error('Invalid value passed for "setOpenLink"');
     }
     this._data.openLink = openLink.getData();
+    return this;
+  }
+
+  setStateChanged(stateChanged: boolean) {
+    this._data.stateChanged = stateChanged;
     return this;
   }
 }

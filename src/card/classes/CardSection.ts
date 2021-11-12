@@ -7,7 +7,7 @@ export default class CardSection {
     collapsible?: boolean;
     header?: string;
     uncollapsiblewidgetsNum?: number;
-    widgets: ReturnType<ButtonSet['getData']>[];
+    widgets: ReturnType<Widget['getData']>[];
   };
 
   constructor() {
@@ -18,7 +18,7 @@ export default class CardSection {
     return this._data;
   }
 
-  addWidget(widget: Widget) {
+  addWidget<W extends Widget>(widget: W) {
     if (widget instanceof Widget === false) {
       throw new Error('Invalid value passed for "addWidget"');
     }

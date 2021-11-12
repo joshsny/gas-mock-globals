@@ -17,7 +17,7 @@ export default class IconImage extends Widget {
     return this._data;
   }
 
-  setImageUrl(url: string) {
+  setIconUrl(url: string) {
     this._data.url = url;
 
     return this;

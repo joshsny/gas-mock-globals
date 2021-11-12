@@ -25,6 +25,11 @@ export default class ActionResponseBuilder {
     return this;
   }
 
+  setStateChanged(stateChanged: boolean) {
+    this._actionResponse.setStateChanged(stateChanged);
+    return this;
+  }
+
   build() {
     return this._actionResponse;
   }

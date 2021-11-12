@@ -44,6 +44,6 @@ export default class TextButton extends Button {
   }
 
   getData() {
-    return { textButton: super.getData() };
+    return this._data;
   }
 }

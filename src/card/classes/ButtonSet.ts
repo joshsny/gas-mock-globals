@@ -1,10 +1,9 @@
-import ImageButton from './ImageButton';
-import TextButton from './TextButton';
+import Button from './Button';
 import Widget from './Widget';
 
 export default class ButtonSet extends Widget {
   public _data: {
-    buttons: ReturnType<typeof TextButton.prototype.getData>[];
+    buttons: ReturnType<typeof Button.prototype.getData>[];
   };
 
   constructor() {
@@ -16,8 +15,8 @@ export default class ButtonSet extends Widget {
     return this._data;
   }
 
-  addButton(button: TextButton | ImageButton) {
-    if (button instanceof TextButton || button instanceof ImageButton === false) {
+  addButton<B extends Button>(button: B) {
+    if (button instanceof Button === false) {
       throw new Error('Invalid value passed for "addButton"');
     }
 

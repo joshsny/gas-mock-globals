@@ -2,7 +2,7 @@ import HttpResponse from './classes/HttpResponse';
 import UrlFetchAppStubConfiguration from './classes/UrlFetchAppStubConfiguration';
 
 export default class UrlFetchApp {
-  static fetch(url: string, params: Record<string, string> = {}) {
+  static fetch(url: string, params: Record<string, unknown> = {}) {
     const data = UrlFetchAppStubConfiguration.get(url);
     if (data) {
       return data.response;
